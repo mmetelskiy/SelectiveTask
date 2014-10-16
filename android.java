@@ -48,13 +48,13 @@ public class android
 		{
 			JsonObject obj = (JsonObject)val;
 			String datetime[] = obj.get("datetime").toString().split("T");
-			System.out.println("Date: " + datetime[0]);
-			System.out.println("Time: " + datetime[1]);
-			System.out.println("URL: " + obj.get("facebook_rsvp_url"));
+			System.out.println("Date: " + datetime[0].replaceAll("\"",""));
+			System.out.println("Time: " + datetime[1].replaceAll("\"",""));
+			System.out.println("URL: " + obj.get("facebook_rsvp_url").toString().replaceAll("\"",""));
 			JsonObject venue = (JsonObject)obj.get("venue");
-			System.out.println("Name: " + venue.get("name"));
-			System.out.println("City: " + venue.get("city"));
-			System.out.println("Country: " + venue.get("country"));
+			System.out.println("Name: " + venue.get("name").toString().replaceAll("\"",""));
+			System.out.println("City: " + venue.get("city").toString().replaceAll("\"",""));
+			System.out.println("Country: " + venue.get("country").toString().replaceAll("\"",""));
 			System.out.println();
 		}
 	}
